@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">almourabi</string>
+    <string name="fname_hint">First name</string>
+    <string name="lname_hint">Last name</string>
+    <string name="email_hint">Email</string>
+    <string name="pass_hint">Password</string>
+    <string name="regbutton">Register</string>
+    <string name="logbutton">Login</string>
+    <string name="go_to_signin">Already have an account? sign-in here.</string>
+    <string name="go_to_signup">You don\'t have an account? sign-up here.</string>
+    <string name="todo">TODOD</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

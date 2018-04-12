@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin">34dp</dimen>
+    <dimen name="margin_plus">24dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="logo">100dp</dimen>
+    <dimen name="big_margin">50dp</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="label_size">13sp</dimen>
+    <dimen name="smaller_margin">6dp</dimen>
+    <dimen name="small_margin">12dp</dimen>
+    <dimen name="radius_cardView_dimen">20dp</dimen>
+    <dimen name="elevation">3dp</dimen>
+    <dimen name="card_height">42dp</dimen>
+    <dimen name="assets_btn">34dp</dimen>
+</resources>

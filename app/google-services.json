@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "893154882487",
+    "firebase_url": "https://almourabi-7d856.firebaseio.com",
+    "project_id": "almourabi-7d856",
+    "storage_bucket": "almourabi-7d856.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:893154882487:android:953637335047b0fe",
+        "android_client_info": {
+          "package_name": "com.nadim.almourabi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "893154882487-76dn1rm3e8gft7hlcntgt36pldt7ql7h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nadim.almourabi",
+            "certificate_hash": "1ae22035b75d58075d6db1dd51a728ff9036c7ff"
+          }
+        },
+        {
+          "client_id": "893154882487-bfh58ssjnullhj9uuknaolmamlm6r6st.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXJ8tZHX5gC2Uax0KJ4CDiZLijL6eTJkY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "893154882487-bfh58ssjnullhj9uuknaolmamlm6r6st.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
