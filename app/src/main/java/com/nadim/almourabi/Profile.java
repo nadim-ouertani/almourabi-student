@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.nadim.almourabi.R;
 
 
 /**
@@ -30,22 +31,7 @@ public class Profile extends Fragment {
 
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_profile, container, false);
-        //FirebaseAuth mAuth = FirebaseAuth.getInstance();
-
-        ViewPager pager = v.findViewById(R.id.pager_profile);
-        pagerAdapterProfile myAdapter = new pagerAdapterProfile(getChildFragmentManager());
-        pager.setAdapter(myAdapter);
-        // Give the TabLayout the ViewPager
-        TabLayout tabLayout = v.findViewById(R.id.tabs_profile);
-        tabLayout.setupWithViewPager(pager);
-        seticon(tabLayout);
         return v;
-    }
-
-    private void seticon(TabLayout tab){
-        tab.getTabAt(0).setIcon(R.drawable.home);
-        tab.getTabAt(1).setIcon(R.drawable.todo);
-        tab.getTabAt(2).setIcon(R.drawable.profile);
     }
 
 

@@ -4,35 +4,119 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     tools:context="com.nadim.almourabi.Profile">
-
-    <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/pink"
             android:orientation="vertical">
 
-            <android.support.design.widget.TabLayout
-                android:id="@+id/tabs_profile"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/pink"
-                app:tabMode="fixed"
-                app:tabGravity="fill"/>
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/pager_profile"
-                android:background="@color/white"
-                android:layout_marginTop="@dimen/small_margin"
-                android:layout_marginBottom="@dimen/margin"
+            <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="10px"
+                android:layout_height="150px"/>
 
         </LinearLayout>
-
-    </android.support.constraint.ConstraintLayout>
-
+</ScrollView>
     </FrameLayout>

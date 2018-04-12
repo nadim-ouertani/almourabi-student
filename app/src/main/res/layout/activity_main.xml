@@ -9,25 +9,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/pink"
+        android:background="@color/gray"
         android:orientation="vertical">
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/pink"
-            app:tabMode="fixed"
-            app:tabGravity="fill"/>
-
         <android.support.v4.view.ViewPager
-            android:id="@+id/pager"
-            android:background="@color/white"
-            android:layout_marginTop="@dimen/small_margin"
-            android:layout_marginBottom="@dimen/margin"
+            android:id="@+id/pagerAdapter"
+            android:layout_marginBottom="8dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
 
     </LinearLayout>
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navigationBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="0dp"
+        android:background="@color/white"
+        app:itemTextColor="@color/bottomnavigationcolor"
+        app:itemIconTint="@color/bottomnavigationcolor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/bottomnavigation" />
 
 </android.support.constraint.ConstraintLayout>

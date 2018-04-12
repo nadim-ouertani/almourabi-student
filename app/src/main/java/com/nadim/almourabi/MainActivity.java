@@ -1,39 +1,111 @@
 package com.nadim.almourabi;
 
 import android.content.Intent;
-import android.support.design.widget.TabLayout;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+    //viewPager
+    private ViewPager viewPager;
 
+    //Firebase Auth
     private FirebaseAuth mAuth;
+
+    //navigationBottom
+    BottomNavigationView bottomNavigationView;
+
+    //Fragments
+
+    Home home;
+    Notification notification;
+    Profile profile;
+    MenuItem prevMenuItem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //Hide action bar
+        getSupportActionBar().hide();
 
+        //Get FirebaseAuth instance
         mAuth = FirebaseAuth.getInstance();
 
-        ViewPager pager = findViewById(R.id.pager);
-        pagerAdapter myAdapter = new pagerAdapter(getSupportFragmentManager());
-        pager.setAdapter(myAdapter);
-        // Give the TabLayout the ViewPager
-        TabLayout tabLayout = findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(pager);
-        seticon(tabLayout);
+        //Initializing viewPager
+        viewPager = findViewById(R.id.pagerAdapter);
+        viewPager.setOffscreenPageLimit((3) - 1);
+        //Initializing the bottomNavigationView
+        bottomNavigationView = findViewById(R.id.navigationBottom);
 
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.navigation_home:
+                                viewPager.setCurrentItem(0);
+                                break;
+                            case R.id.navigation_notifications:
+                                viewPager.setCurrentItem(1);
+                                break;
+                            case R.id.navigation_profile:
+                                viewPager.setCurrentItem(2);
+                                break;
+                        }
+                        return false;
+                    }
+                });
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                if (prevMenuItem != null) {
+                    prevMenuItem.setChecked(false);
+                }
+                else
+                {
+                    bottomNavigationView.getMenu().getItem(0).setChecked(false);
+                }
+                Log.d("page", "onPageSelected: "+position);
+                bottomNavigationView.getMenu().getItem(position).setChecked(true);
+                prevMenuItem = bottomNavigationView.getMenu().getItem(position);
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+
+        setupViewPager(viewPager);
     }
 
-    private void seticon(TabLayout tab){
-        tab.getTabAt(0).setIcon(R.drawable.home);
-        tab.getTabAt(1).setIcon(R.drawable.todo);
-        tab.getTabAt(2).setIcon(R.drawable.profile);
+
+    private void setupViewPager(ViewPager viewPager) {
+        pagerAdapter adapter = new pagerAdapter(getSupportFragmentManager());
+        home=new Home();
+        notification=new Notification();
+        profile=new Profile();
+        adapter.addFragment(home);
+        adapter.addFragment(notification);
+        adapter.addFragment(profile);
+        viewPager.setAdapter(adapter);
     }
+
 
     @Override
     protected void onStart() {
@@ -43,5 +115,6 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
     }
+
 }
 
