@@ -20,9 +20,24 @@
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/shadow_01">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="12dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textColor="@color/black"
+                        android:text="OurLOGO"/>
+
                 <android.support.v7.widget.SearchView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"/>
+
+                </LinearLayout>
 
             </android.support.design.widget.CoordinatorLayout>
 
