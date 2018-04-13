@@ -5,6 +5,7 @@
     <color name="colorAccent">#FF4081</color>
 
     <!--appCOLOR-->
+    <color name="whitegray">#e2e2e2</color>
     <color name="gray">#c1c1c1</color>
     <color name="trans">#1100</color>
     <color name="white">#FFF</color>
