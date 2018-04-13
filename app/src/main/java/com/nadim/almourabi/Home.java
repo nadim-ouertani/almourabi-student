@@ -3,6 +3,9 @@ package com.nadim.almourabi;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,15 +24,22 @@ import com.nadim.almourabi.R;
 import com.nadim.almourabi.Student;
 import com.nadim.almourabi.Teacher;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Home extends Fragment {
 
+    private List<TeacherList> teacherLists = new ArrayList<>();
+    private RecyclerView recyclerView;
+    private TeacherListAdapter mAdapter;
+
     public String student_LG = "";
     private FirebaseAuth mAuth;
-    TextView not;
+    //TextView not;
 
     public Home() {
         // Required empty public constructor
@@ -40,14 +50,28 @@ public class Home extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        Button logout = view.findViewById(R.id.logout);
-        not = view.findViewById(R.id.notification);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-            }
-        });
+        //TEST RECYCLER
+
+        recyclerView = view.findViewById(R.id.teacherRecycler);
+
+        mAdapter = new TeacherListAdapter(teacherLists);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
+        recyclerView.setLayoutManager(mLayoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(mAdapter);
+
+        prepareTeacherData();
+
+        //END
+
+        //Button logout = view.findViewById(R.id.logout);
+        //not = view.findViewById(R.id.notification);
+//        logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                FirebaseAuth.getInstance().signOut();
+//            }
+//        });
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
@@ -131,7 +155,7 @@ public class Home extends Fragment {
                 Eva eva = dataSnapshot.getValue(Eva.class);
                 if (eva.Sid.equals(mAuth.getCurrentUser().getUid())){
                     String key = dataSnapshot.getKey();
-                    not.setText("Your eval is: " + eva.Eval + " From Teacher id: " + eva.Tid + "EVA ID : " + key);
+                    //not.setText("Your eval is: " + eva.Eval + " From Teacher id: " + eva.Tid + "EVA ID : " + key);
                 }
             }
 
@@ -181,6 +205,49 @@ public class Home extends Fragment {
         int subend = substart+3;
         res = s.substring(substart,subend);
         return res;
+    }
+
+    private void prepareTeacherData() {
+        TeacherList teacherList = new TeacherList("Nadim", "OUERTANI", "INFORMATIQUE");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Raja", "SATTAY", "FRANCAIS");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Moufida", "ABDELLI", "ARABE");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Maissa", "OUERTANI", "SIENCE");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Jamel eddine", "OUERTANI", "MATH");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Raja", "SATTAY", "FRANCAIS");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Moufida", "ABDELLI", "ARABE");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Maissa", "OUERTANI", "SIENCE");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Jamel eddine", "OUERTANI", "MATH");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Raja", "SATTAY", "FRANCAIS");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Moufida", "ABDELLI", "ARABE");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Maissa", "OUERTANI", "SIENCE");
+        teacherLists.add(teacherList);
+
+        teacherList = new TeacherList("Jamel eddine", "OUERTANI", "MATH");
+        teacherLists.add(teacherList);
+
+        mAdapter.notifyDataSetChanged();
     }
 
 }
