@@ -13,23 +13,23 @@ import java.util.List;
  */
 public class pagerAdapter extends FragmentPagerAdapter {
 
-    private final List<Fragment> mFragmentList = new ArrayList<>();
+    private final List<Fragment> myFragmentList = new ArrayList<>();
     pagerAdapter(FragmentManager fm) {
         super(fm);
     }
 
     @Override
     public Fragment getItem(int position) {
-        return mFragmentList.get(position);
+        return myFragmentList.get(position);
     }
 
     @Override
     public int getCount() {
-        return mFragmentList.size();
+        return myFragmentList.size();
     }
 
     public void addFragment(Fragment fragment) {
-        mFragmentList.add(fragment);
+        myFragmentList.add(fragment);
     }
 
 }
