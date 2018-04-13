@@ -34,7 +34,6 @@ import java.util.List;
 public class Home extends Fragment {
 
     private List<TeacherList> teacherLists = new ArrayList<>();
-    private RecyclerView recyclerView;
     private TeacherListAdapter mAdapter;
 
     public String student_LG = "";
@@ -52,7 +51,7 @@ public class Home extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         //TEST RECYCLER
 
-        recyclerView = view.findViewById(R.id.teacherRecycler);
+        RecyclerView recyclerView = view.findViewById(R.id.teacherRecycler);
 
         mAdapter = new TeacherListAdapter(teacherLists);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
