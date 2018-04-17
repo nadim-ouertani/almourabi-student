@@ -3,6 +3,7 @@ package com.nadim.almourabi;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -44,6 +45,13 @@ public class Home extends Fragment {
         // Required empty public constructor
     }
 
+    public static Home newInstance() {
+        Home home = new Home();
+        Bundle args = new Bundle();
+        home.setArguments(args);
+        return home;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -54,12 +62,17 @@ public class Home extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.teacherRecycler);
 
         mAdapter = new TeacherListAdapter(teacherLists);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext()) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(mAdapter);
-
         prepareTeacherData();
+
 
         //END
 
@@ -93,9 +106,9 @@ public class Home extends Fragment {
 
                         Teacher teacher = dataSnapshot.getValue(Teacher.class);
                         System.out.println("LG STUDENT " + student_LG);
-                        if (searching(teacher.LGS,student_LG)) {
+                        if (searching(teacher.LGS, student_LG)) {
                             System.out.println("A teacher found!: " + teacher.firstname + " YOUR LG : " + student_LG + " YOUR TEACHER LGS : " + teacher.LGS);
-                            switch (getSub(teacher.LGS,student_LG)){
+                            switch (getSub(teacher.LGS, student_LG)) {
                                 case "ARA":
                                     System.out.println("SUBJECT ARAB");
                                     break;
@@ -152,7 +165,7 @@ public class Home extends Fragment {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Eva eva = dataSnapshot.getValue(Eva.class);
-                if (eva.Sid.equals(mAuth.getCurrentUser().getUid())){
+                if (eva.Sid.equals(mAuth.getCurrentUser().getUid())) {
                     String key = dataSnapshot.getKey();
                     //not.setText("Your eval is: " + eva.Eval + " From Teacher id: " + eva.Tid + "EVA ID : " + key);
                 }
@@ -185,24 +198,19 @@ public class Home extends Fragment {
     }
 
     //FUN
-    public Boolean searching(String ts, String ss){
+    public Boolean searching(String ts, String ss) {
         boolean res;
-        if (ts.contains(ss) && ss.length() > 0) {
-            res = true;
-        }
-        else{
-            res = false;
-        }
+        res = ts.contains(ss) && ss.length() > 0;
 
         return res;
     }
 
-    public String getSub(String s, String ss){
+    public String getSub(String s, String ss) {
         String res = "";
         int start = s.indexOf(ss) + 3;
-        int substart = start+1;
-        int subend = substart+3;
-        res = s.substring(substart,subend);
+        int substart = start + 1;
+        int subend = substart + 3;
+        res = s.substring(substart, subend);
         return res;
     }
 
