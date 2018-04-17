@@ -3,6 +3,7 @@ package com.nadim.almourabi;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,6 @@ import java.util.List;
  * from tunisia with love
  */
 public class pagerAdapter extends FragmentPagerAdapter {
-
     private final List<Fragment> myFragmentList = new ArrayList<>();
     pagerAdapter(FragmentManager fm) {
         super(fm);
