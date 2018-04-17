@@ -1,32 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/whitegray"
     tools:context="com.nadim.almourabi.MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <com.nadim.almourabi.customViewPager
+        android:id="@+id/pagerAdapter"
         android:layout_height="match_parent"
-        android:background="@color/whitegray"
-        android:orientation="vertical">
-
-        <android.support.v4.view.ViewPager
-            android:id="@+id/pagerAdapter"
+        android:layout_marginBottom="56dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
+        android:background="@color/whitegray" />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigationBottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_marginBottom="0dp"
         android:background="@color/white"
-        app:itemTextColor="@color/bottomnavigationcolor"
         app:itemIconTint="@color/bottomnavigationcolor"
+        app:itemTextColor="@color/bottomnavigationcolor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/bottomnavigation" />
 
