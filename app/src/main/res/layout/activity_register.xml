@@ -37,7 +37,6 @@
                     android:src="@mipmap/ic_launcher" />
 
                 <EditText
-                    android:padding="@dimen/padding"
                     android:id="@+id/fn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -50,6 +49,7 @@
                     android:hint="@string/fname_hint"
                     android:inputType="text"
                     android:maxLines="1"
+                    android:padding="@dimen/padding"
                     android:paddingEnd="@dimen/padding"
                     android:paddingRight="@dimen/padding"
                     android:singleLine="true"
@@ -58,7 +58,6 @@
                     android:textSize="@dimen/text_size" />
 
                 <EditText
-                    android:padding="@dimen/padding"
                     android:id="@+id/ln"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -71,6 +70,7 @@
                     android:hint="@string/lname_hint"
                     android:inputType="text"
                     android:maxLines="1"
+                    android:padding="@dimen/padding"
                     android:paddingEnd="@dimen/padding"
                     android:paddingRight="@dimen/padding"
                     android:singleLine="true"
@@ -79,7 +79,6 @@
                     android:textSize="@dimen/text_size" />
 
                 <EditText
-                    android:padding="@dimen/padding"
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -92,6 +91,7 @@
                     android:hint="@string/email_hint"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
+                    android:padding="@dimen/padding"
                     android:paddingEnd="@dimen/padding"
                     android:paddingRight="@dimen/padding"
                     android:singleLine="true"
@@ -100,7 +100,6 @@
                     android:textSize="@dimen/text_size" />
 
                 <EditText
-                    android:padding="@dimen/padding"
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -113,6 +112,7 @@
                     android:hint="@string/pass_hint"
                     android:inputType="textPassword"
                     android:maxLines="1"
+                    android:padding="@dimen/padding"
                     android:paddingEnd="@dimen/padding"
                     android:paddingRight="@dimen/padding"
                     android:singleLine="true"

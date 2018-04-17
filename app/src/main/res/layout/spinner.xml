@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textSize="@dimen/text_size"
-    android:textColor="@color/dirtyWhite"
-    android:paddingTop="@dimen/padding"
     android:paddingBottom="@dimen/padding"
-    android:paddingRight="@dimen/padding"
     android:paddingLeft="@dimen/padding"
-    />
+    android:paddingRight="@dimen/padding"
+    android:paddingTop="@dimen/padding"
+    android:textColor="@color/dirtyWhite"
+    android:textSize="@dimen/text_size" />
