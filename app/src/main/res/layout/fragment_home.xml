@@ -1,5 +1,4 @@
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,71 +8,71 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
-            <android.support.design.widget.CoordinatorLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:background="@drawable/shadow_01">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="12dp"
-                    android:orientation="horizontal">
+                    android:background="@drawable/shadow_01"
+                    android:orientation="horizontal"
+                    android:padding="12dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="18sp"
+                        android:text="OurLOGO"
                         android:textColor="@color/black"
-                        android:text="OurLOGO"/>
+                        android:textSize="18sp" />
 
-                <android.support.v7.widget.SearchView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    <android.support.v7.widget.SearchView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
 
                 </LinearLayout>
 
-            </android.support.design.widget.CoordinatorLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/teacherRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/teacherRecycler"
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:scrollbars="none">
+                    android:orientation="horizontal">
 
-                </android.support.v7.widget.RecyclerView>
+                    <Button
+                        android:id="@+id/logout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="logout" />
+
+                    <TextView
+                        android:id="@+id/notification"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NOTIFICATION" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="HOME" />-->
-
-            <!--<TextView-->
-                <!--android:id="@+id/notification"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:text="NOTIFICATION"/>-->
-
-            <!--<Button-->
-                <!--android:id="@+id/logout"-->
-                <!--android:text="logout"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content" />-->
-
-        </LinearLayout>
+        </ScrollView>
 
     </android.support.constraint.ConstraintLayout>
 
