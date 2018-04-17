@@ -20,8 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 public class login extends AppCompatActivity {
 
     private static final String TAG = "Login";
-    private String e,p;
-    private EditText email,password;
+    private String e, p;
+    private EditText email, password;
     private FirebaseAuth mAuth;
     //public static final String status = "STUDENT";
 
@@ -46,10 +46,10 @@ public class login extends AppCompatActivity {
                         .addOnCompleteListener(login.this, new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()){
+                                if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d(TAG, "signInWithEmail:success");
-                                    startActivity(new Intent(login.this,MainActivity.class));
+                                    startActivity(new Intent(login.this, MainActivity.class));
                                     finish();
                                 } else {
                                     // If sign in fails, display a message to the user.
@@ -65,7 +65,7 @@ public class login extends AppCompatActivity {
         gotoregister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(login.this,register.class));
+                startActivity(new Intent(login.this, register.class));
                 finish();
             }
         });
@@ -78,7 +78,7 @@ public class login extends AppCompatActivity {
         //password.setGravity(Gravity.RIGHT);
         // Check if user is signed in (non-null) and update UI accordingly.
         if (mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(login.this,MainActivity.class));
+            startActivity(new Intent(login.this, MainActivity.class));
             finish();
         }
     }

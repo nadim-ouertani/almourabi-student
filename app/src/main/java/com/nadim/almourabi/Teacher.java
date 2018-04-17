@@ -13,7 +13,7 @@ public class Teacher {
     String lastname;
     String LGS;
 
-    public Teacher(){
+    public Teacher() {
 
     }
 
@@ -25,7 +25,7 @@ public class Teacher {
 
     void writeNewUser(String userId, String firstname, String lastname, String LGS) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
-        Teacher teacher = new Teacher(firstname,lastname,LGS);
+        Teacher teacher = new Teacher(firstname, lastname, LGS);
         ref.child("teachers").child(userId).setValue(teacher);
     }
 }

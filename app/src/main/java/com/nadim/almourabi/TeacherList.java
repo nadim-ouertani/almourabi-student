@@ -5,39 +5,39 @@ package com.nadim.almourabi;
  * from tunisia with love
  */
 public class TeacherList {
-    private String FirstName,LastName,Subject;
+    private String FirstName, LastName, Subject;
 
-    public TeacherList(){
+    public TeacherList() {
 
     }
 
-    public TeacherList(String FirstName, String LastName, String Subject){
+    public TeacherList(String FirstName, String LastName, String Subject) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.Subject = Subject;
     }
 
-    public String getFirstName(){
+    public String getFirstName() {
         return FirstName;
     }
 
-    public void setFirstName(String x){
+    public void setFirstName(String x) {
         this.FirstName = x;
     }
 
-    public String getLastName(){
+    public String getLastName() {
         return LastName;
     }
 
-    public void setLastName(String x){
+    public void setLastName(String x) {
         this.LastName = x;
     }
 
-    public String getSubject(){
+    public String getSubject() {
         return Subject;
     }
 
-    public void setSubject(String x){
+    public void setSubject(String x) {
         this.Subject = x;
     }
 }

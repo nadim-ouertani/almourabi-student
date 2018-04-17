@@ -11,11 +11,11 @@ public class Eva {
 
     String Tid, Sid, Eval, Sub;
 
-    public Eva(){
+    public Eva() {
 
     }
 
-    Eva(String Tid, String Sid, String Eval, String Sub){
+    Eva(String Tid, String Sid, String Eval, String Sub) {
         this.Tid = Tid;
         this.Sid = Sid;
         this.Eval = Eval;

@@ -20,9 +20,9 @@ import com.google.firebase.auth.FirebaseAuth;
 public class register extends AppCompatActivity {
 
     private static final String TAG = "Register";
-    private String fn,ln,e,l,g,p,con;
+    private String fn, ln, e, l, g, p, con;
     private EditText firstname, lastname, email, password;
-    private Spinner level,group;
+    private Spinner level, group;
     private FirebaseAuth mAuth;
 
 
@@ -75,24 +75,21 @@ public class register extends AppCompatActivity {
                             // ...
                         }
                     });
+                } else {
+                    System.out.println("ERROR");
                 }
-
-            else{
-                        System.out.println("ERROR");
-                    }
-                }
+            }
         });
 
         gotologin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(register.this,login.class));
+                startActivity(new Intent(register.this, login.class));
                 finish();
             }
         });
 
     }
-
 
 
     @Override
@@ -101,13 +98,13 @@ public class register extends AppCompatActivity {
         //password.setGravity(Gravity.RIGHT);
         // Check if user is signed in (non-null) and update UI accordingly.
         if (mAuth.getCurrentUser() != null) {
-            startActivity(new Intent(register.this,MainActivity.class));
+            startActivity(new Intent(register.this, MainActivity.class));
             finish();
         }
     }
 
 
-    private void spinners(){
+    private void spinners() {
 
         //LEVEL SPINNER
 
@@ -132,27 +129,34 @@ public class register extends AppCompatActivity {
         field_spinner.setAdapter(field_adapter);
     }
 
-    public String getLevel(String l){
+    public String getLevel(String l) {
         switch (l) {
-            case "First" : l = "1";
+            case "First":
+                l = "1";
                 break;
 
-            case "Second" : l = "2";
+            case "Second":
+                l = "2";
                 break;
 
-            case "Third" : l = "3";
+            case "Third":
+                l = "3";
                 break;
 
-            case "Fourth" : l = "4";
+            case "Fourth":
+                l = "4";
                 break;
 
-            case "Fifth" : l = "5";
+            case "Fifth":
+                l = "5";
                 break;
 
-            case "Sixth" : l = "6";
+            case "Sixth":
+                l = "6";
                 break;
 
-            default : l = "Null";
+            default:
+                l = "Null";
                 break;
         }
 
@@ -167,8 +171,6 @@ public class register extends AppCompatActivity {
         String lname = lastname.getText().toString();
         String vemail = email.getText().toString();
         String vpassword = password.getText().toString();
-
-
 
 
         if (name.isEmpty()) {

@@ -18,6 +18,13 @@ public class Notification extends Fragment {
         // Required empty public constructor
     }
 
+    public static Notification newInstance() {
+        Notification notification = new Notification();
+        Bundle args = new Bundle();
+        notification.setArguments(args);
+        return notification;
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

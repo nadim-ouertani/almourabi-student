@@ -10,9 +10,9 @@ import com.google.firebase.database.FirebaseDatabase;
 
 class Student {
 
-    String id,firstname,lastname,LG;
+    String id, firstname, lastname, LG;
 
-    public Student(){
+    public Student() {
 
     }
 

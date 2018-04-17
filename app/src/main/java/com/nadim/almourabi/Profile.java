@@ -24,6 +24,13 @@ public class Profile extends Fragment {
         // Required empty public constructor
     }
 
+    public static Profile newInstance() {
+        Profile profile = new Profile();
+        Bundle args = new Bundle();
+        profile.setArguments(args);
+        return profile;
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
