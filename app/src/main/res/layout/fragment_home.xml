@@ -22,16 +22,23 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/shadow_01"
                     android:orientation="horizontal"
-                    android:padding="12dp">
+                    android:paddingBottom="12dp"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:paddingTop="6dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="OurLOGO"
-                        android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:layout_marginEnd="14dp"
+                        android:layout_marginRight="14dp"
+                        android:text="Almourabi"
+                        android:textColor="@color/whiteblack"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
 
                     <android.support.v7.widget.SearchView
+                        android:background="@color/dirtyWhite"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
 
@@ -61,12 +68,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="logout" />
-
-                    <TextView
-                        android:id="@+id/notification"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="NOTIFICATION" />
 
                 </LinearLayout>
 
