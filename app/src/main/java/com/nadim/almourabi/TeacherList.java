@@ -11,7 +11,7 @@ public class TeacherList {
 
     }
 
-    public TeacherList(String FirstName, String LastName, String Subject) {
+    TeacherList(String FirstName, String LastName, String Subject) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.Subject = Subject;
