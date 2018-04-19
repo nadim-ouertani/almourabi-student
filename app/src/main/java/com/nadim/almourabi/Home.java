@@ -1,6 +1,5 @@
 package com.nadim.almourabi;
 
-
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -10,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -25,15 +23,17 @@ import java.util.List;
 
 
 /**
- * A simple {@link Fragment} subclass.
+ * A simple {@link Fragment} subclasss.
  */
 public class Home extends Fragment {
 
-    private List<TeacherList> teacherLists = new ArrayList<>();
-    private TeacherListAdapter mAdapter;
-
+    //Declare the student_LG var with empty char.
     public String student_LG = "";
-    private FirebaseAuth mAuth;
+    private TeacherListAdapter mAdapter;
+    //Get our Fun class.
+    Fun myFun = new Fun();
+    //Get the adapter and the teacherList
+    private List<TeacherList> teacherLists = new ArrayList<>();
 
     public Home() {
         // Required empty public constructor
@@ -42,25 +42,29 @@ public class Home extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        //TEST RECYCLER
+        //RecyclerVIew
         RecyclerView recyclerView = view.findViewById(R.id.teacherRecycler);
 
         mAdapter = new TeacherListAdapter(teacherLists);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext()) {
             @Override
+            //Remove the scroll from the recyclerView
             public boolean canScrollVertically() {
                 return false;
             }
         };
+
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(mAdapter);
-        //END
 
-        /* A sign out button to sign out from the current student */
+        //Set the adapter to the recyclerView
+        recyclerView.setAdapter(mAdapter);
+
+        // A sign out button to sign out from the current student
         Button logout = view.findViewById(R.id.logout);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,10 +73,11 @@ public class Home extends Fragment {
             }
         });
 
+        //Get instance from the database and the Auth
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference ref = database.getReference();
         final DatabaseReference myRef = database.getReference();
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
         //GET CURRENT STUDENT
         ref.child("students").child(mAuth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
@@ -82,8 +87,6 @@ public class Home extends Fragment {
                  * whenever data at this location is updated.
                  */
                 Student student = dataSnapshot.getValue(Student.class);
-                assert student != null;
-                System.out.println("First And Last NAME : " + student.firstname + " " + student.lastname + " | Student Level and group : " + student.LG);
                 student_LG = student.LG;
 
                 //GET THE TEACHERS FOR THE CURRENT STUDENT
@@ -94,9 +97,8 @@ public class Home extends Fragment {
                         Teacher teacher = dataSnapshot.getValue(Teacher.class);
                         System.out.println("LG STUDENT " + student_LG);
                         assert teacher != null;
-                        if (searching(teacher.LGS, student_LG)) {
-                            System.out.println("A teacher found!: " + teacher.firstname + " YOUR LG : " + student_LG + " YOUR TEACHER LGS : " + teacher.LGS);
-                            switch (getSub(teacher.LGS, student_LG)) {
+                        if (myFun.Searching(teacher.LGS, student_LG)) {
+                            switch (myFun.getSubject(teacher.LGS, student_LG)) {
                                 case "ARA":
                                     System.out.println("ARAB");
                                     teacher.LGS = "ARAB";
@@ -154,70 +156,15 @@ public class Home extends Fragment {
             }
         });
 
-//        ref.child("eva").addChildEventListener(new ChildEventListener() {
-//            @Override
-//            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-//                Eva eva = dataSnapshot.getValue(Eva.class);
-//                assert eva != null;
-//                if (eva.Sid.equals(mAuth.getCurrentUser().getUid())) {
-//                    //String key = dataSnapshot.getKey();
-//                    not.setText("Your eva: " + eva.Eval + " Sub: " + eva.Sub + " From teacher: "  + eva.Tid + " Your id: "+ eva.Sid);
-//                    System.out.println("Notification found!");
-//                }
-//            }
-//
-//            @Override
-//            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-//
-//            }
-//
-//            @Override
-//            public void onChildRemoved(DataSnapshot dataSnapshot) {
-//
-//            }
-//
-//            @Override
-//            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-//
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//
-//            }
-//        });
-
-
         return view;
 
-    }
-
-    //FUN
-    public Boolean searching(String ts, String ss) {
-        boolean res;
-        res = ts.contains(ss) && ss.length() > 0;
-
-        return res;
-    }
-
-    public String getSub(String s, String ss) {
-        String res;
-        int start = s.indexOf(ss) + 3;
-        int substart = start + 1;
-        int subend = substart + 3;
-        res = s.substring(substart, subend);
-        return res;
     }
 
     private void prepareTeacherData(String fn, String ln, String sub) {
         TeacherList teacherList = new TeacherList(fn, ln, sub);
         teacherLists.add(teacherList);
 
-        /*teacherList = new TeacherList("Raja", "SATTAY", "FRANCAIS");
-         *teacherLists.add(teacherList);
-         */
-
-
+        //Notify the adapter that the data has been add.
         mAdapter.notifyDataSetChanged();
     }
 
