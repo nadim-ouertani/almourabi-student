@@ -1,4 +1,4 @@
-package helpers;
+package com.nadim.almourabi.helpers;
 
 /**
  * Created by nadim on 4/19/18.
