@@ -13,4 +13,6 @@
     <color name="dirtyWhite">#f5f5f5</color>
     <color name="pink">#FF4081</color>
     <color name="whiteblack">#1a1a1a</color>
+    <color name="green">#89ff89</color>
+    <color name="red">#ff4e4e</color>
 </resources>
