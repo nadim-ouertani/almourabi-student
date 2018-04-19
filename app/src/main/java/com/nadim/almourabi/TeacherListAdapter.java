@@ -12,24 +12,24 @@ import java.util.List;
  * Created by nadim on 4/13/18.
  * from tunisia with love
  */
+
 public class TeacherListAdapter extends RecyclerView.Adapter<TeacherListAdapter.MyViewHolder> {
 
     private List<TeacherList> teacherLists;
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView FirstName, LastName, Subject;
+    TeacherListAdapter(List<TeacherList> teacherLists) {
+        this.teacherLists = teacherLists;
+    }
 
-        public MyViewHolder(View view) {
+    class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView FirstName, LastName, Subject;
+
+        MyViewHolder(View view) {
             super(view);
             FirstName = view.findViewById(R.id.TeacherList_fn);
             LastName = view.findViewById(R.id.TeacherList_ln);
             Subject = view.findViewById(R.id.TeacherList_sub);
         }
-    }
-
-
-    public TeacherListAdapter(List<TeacherList> teacherLists) {
-        this.teacherLists = teacherLists;
     }
 
     @Override
