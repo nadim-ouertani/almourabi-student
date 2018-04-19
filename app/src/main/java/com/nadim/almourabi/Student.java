@@ -8,22 +8,25 @@ import com.google.firebase.database.FirebaseDatabase;
  * from tunisia with love
  */
 
-class Student {
+public class Student {
 
-    String id, firstname, lastname, LG;
+    public String LG;
+    String id;
+    String firstname;
+    String lastname;
 
     public Student() {
 
     }
 
-    Student(String id, String firstname, String lastname, String LG) {
+    public Student(String id, String firstname, String lastname, String LG) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;
         this.LG = LG;
     }
 
-    void writeNewUser(String userId, String firstname, String lastname, String LG) {
+    public void writeNewUser(String userId, String firstname, String lastname, String LG) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference();
         Student student = new Student(id, firstname, lastname, LG);
         ref.child("students").child(userId).setValue(student);

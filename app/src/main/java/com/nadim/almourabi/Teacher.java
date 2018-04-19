@@ -6,9 +6,9 @@ package com.nadim.almourabi;
  */
 
 public class Teacher {
-    String firstname;
-    String lastname;
-    String LGS;
+    public String firstname;
+    public String lastname;
+    public String LGS;
 
     public Teacher() {
 

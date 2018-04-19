@@ -6,7 +6,10 @@ package com.nadim.almourabi;
  */
 public class Eva {
 
-    String Tid, Sid, Eval, Sub;
+    public String Sid;
+    public String Eval;
+    public String Sub;
+    String Tid;
 
     public Eva() {
 
