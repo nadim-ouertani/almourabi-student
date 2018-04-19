@@ -8,6 +8,7 @@ package com.nadim.almourabi.helpers;
 public class studentTeacherR {
 
     public studentTeacherR() {
+
     }
 
     public Boolean Searching(String teacherLGS, String studentLG) {
