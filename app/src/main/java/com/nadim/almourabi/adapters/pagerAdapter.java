@@ -1,4 +1,4 @@
-package com.nadim.almourabi;
+package com.nadim.almourabi.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,7 +14,7 @@ import java.util.List;
 public class pagerAdapter extends FragmentPagerAdapter {
     private final List<Fragment> myFragmentList = new ArrayList<>();
 
-    pagerAdapter(FragmentManager fm) {
+    public pagerAdapter(FragmentManager fm) {
         super(fm);
     }
 

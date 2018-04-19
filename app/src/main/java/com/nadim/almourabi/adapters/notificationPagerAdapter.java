@@ -1,8 +1,11 @@
-package com.nadim.almourabi;
+package com.nadim.almourabi.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.nadim.almourabi.fragments.Evaluation;
+import com.nadim.almourabi.fragments.Todo;
 
 /**
  * Created by nadim on 4/18/18.
@@ -11,7 +14,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 public class notificationPagerAdapter extends FragmentPagerAdapter {
     private final static int PAGE = 2;
 
-    notificationPagerAdapter(FragmentManager fm) {
+    public notificationPagerAdapter(FragmentManager fm) {
         super(fm);
 
     }

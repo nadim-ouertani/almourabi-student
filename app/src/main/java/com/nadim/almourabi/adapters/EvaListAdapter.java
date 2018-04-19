@@ -1,4 +1,4 @@
-package com.nadim.almourabi;
+package com.nadim.almourabi.adapters;
 
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.nadim.almourabi.R;
 
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class EvaListAdapter extends RecyclerView.Adapter<EvaListAdapter.MyViewHo
 
     private List<EvaList> evaLists;
 
-    EvaListAdapter(List<EvaList> evaLists) {
+    public EvaListAdapter(List<EvaList> evaLists) {
         this.evaLists = evaLists;
     }
 

@@ -1,20 +1,21 @@
-package com.nadim.almourabi;
+package com.nadim.almourabi.adapters;
 
 /**
- * Created by nadim on 4/13/18.
+ * Created by nadim on 4/18/18.
  * from tunisia with love
  */
-public class TeacherList {
-    private String FirstName, LastName, Subject;
+public class EvaList {
+    private String FirstName, LastName, Subject, Eva;
 
-    public TeacherList() {
-
+    public EvaList() {
+        //Empty constructor.
     }
 
-    TeacherList(String FirstName, String LastName, String Subject) {
+    public EvaList(String FirstName, String LastName, String Subject, String Eva) {
         this.FirstName = FirstName;
         this.LastName = LastName;
         this.Subject = Subject;
+        this.Eva = Eva;
     }
 
     public String getFirstName() {
@@ -40,4 +41,13 @@ public class TeacherList {
     public void setSubject(String x) {
         this.Subject = x;
     }
+
+    public String getEva() {
+        return Eva;
+    }
+
+    public void setEva(String x) {
+        this.Eva = x;
+    }
 }
+
