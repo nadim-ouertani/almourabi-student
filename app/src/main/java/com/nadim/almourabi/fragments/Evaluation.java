@@ -1,4 +1,4 @@
-package com.nadim.almourabi;
+package com.nadim.almourabi.fragments;
 
 
 import android.os.Bundle;
@@ -16,6 +16,10 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.nadim.almourabi.Eva;
+import com.nadim.almourabi.R;
+import com.nadim.almourabi.adapters.EvaList;
+import com.nadim.almourabi.adapters.EvaListAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
