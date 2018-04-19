@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context="com.nadim.almourabi.register">
+    tools:context="com.nadim.almourabi.activities.register">
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"

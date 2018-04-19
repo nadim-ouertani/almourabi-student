@@ -5,9 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/whitegray"
-    tools:context="com.nadim.almourabi.MainActivity">
+    tools:context="com.nadim.almourabi.activities.MainActivity">
 
-    <com.nadim.almourabi.customViewPager
+    <com.nadim.almourabi.adapters.customViewPager
         android:id="@+id/pagerAdapter"
         android:layout_height="match_parent"
         android:layout_marginBottom="56dp"

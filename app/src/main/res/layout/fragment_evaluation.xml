@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.nadim.almourabi.Evaluation">
+    tools:context="com.nadim.almourabi.fragments.Evaluation">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
