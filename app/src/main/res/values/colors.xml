@@ -15,4 +15,15 @@
     <color name="whiteblack">#1a1a1a</color>
     <color name="green">#89ff89</color>
     <color name="red">#ff4e4e</color>
+
+    <!--OUR PALET-->
+    <color name="appgreen">#3AB48D</color>
+    <color name="appblue">#67c6df</color>
+    <color name="appred">#FF6F69</color>
+    <color name="appyallow">#FFEEAD</color>
+    <color name="apptrueyallow">#FFCC5C</color>
+    <color name="appviolet">#520b52</color>
+    <color name="apptruyallow_pressed">#ffbc29</color>
+
+
 </resources>
