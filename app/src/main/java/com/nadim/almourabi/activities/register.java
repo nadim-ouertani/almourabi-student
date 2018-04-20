@@ -4,9 +4,9 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -17,15 +17,16 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.nadim.almourabi.R;
 import com.nadim.almourabi.Student;
+import com.nadim.almourabi.helpers.studentTeacherR;
 
 public class register extends AppCompatActivity {
 
-    private static final String TAG = "Register";
     private String fn, ln, e, l, g, p, con;
     private EditText firstname, lastname, email, password;
     private Spinner level, group;
     private FirebaseAuth mAuth;
 
+    studentTeacherR myFun = new studentTeacherR();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +43,7 @@ public class register extends AppCompatActivity {
         group = findViewById(R.id.group);
         password = findViewById(R.id.password);
         TextView gotologin = findViewById(R.id.sign_in_button);
-        TextView register = findViewById(R.id.register);
+        Button register = findViewById(R.id.register);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,20 +58,18 @@ public class register extends AppCompatActivity {
 
                 con = getLevel(l) + "*" + g;
 
-                if (validate()) {
+                if (myFun.validateRegister(firstname, lastname, email, password)) {
                     mAuth.createUserWithEmailAndPassword(e, p).addOnCompleteListener(register.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
-                                Log.d(TAG, "createUserWithEmail:success");
                                 Student student = new Student(mAuth.getCurrentUser().getUid(), fn, ln, con);
                                 student.writeNewUser(mAuth.getCurrentUser().getUid(), fn, ln, con);
                                 startActivity(new Intent(register.this, MainActivity.class));
                                 finish();
                             } else {
                                 // If sign in fails, display a message to the user.
-                                Log.w(TAG, "createUserWithEmail:failure", task.getException());
                             }
 
                             // ...
@@ -164,47 +163,6 @@ public class register extends AppCompatActivity {
         return l;
     }
 
-    public boolean validate() {
-        boolean valid = true;
-
-
-        String name = firstname.getText().toString();
-        String lname = lastname.getText().toString();
-        String vemail = email.getText().toString();
-        String vpassword = password.getText().toString();
-
-
-        if (name.isEmpty()) {
-            firstname.setError("at least 3 characters");
-            valid = false;
-        } else {
-            firstname.setError(null);
-        }
-
-        if (lname.isEmpty()) {
-            lastname.setError("at least 3 characters");
-            valid = false;
-        } else {
-            lastname.setError(null);
-        }
-
-
-        if (vemail.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(vemail).matches()) {
-            email.setError("enter a valid email address");
-            valid = false;
-        } else {
-            email.setError(null);
-        }
-
-        if (vpassword.isEmpty() || password.length() < 4) {
-            password.setError("at least 4 alphanumeric characters");
-            valid = false;
-        } else {
-            password.setError(null);
-        }
-
-        return valid;
-    }
 }
 
 
