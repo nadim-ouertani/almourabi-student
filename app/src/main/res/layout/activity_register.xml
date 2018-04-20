@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient"
+    android:background="@color/appgreen"
     tools:context="com.nadim.almourabi.activities.register">
 
     <android.support.design.widget.CoordinatorLayout
@@ -21,6 +21,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:descendantFocusability="beforeDescendants"
+                android:focusableInTouchMode="true"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="@dimen/padding"
@@ -142,35 +144,19 @@
                     android:layout_marginStart="@dimen/margin"
                     android:background="@color/trans" />
 
-                <android.support.v7.widget.CardView
+                <Button
+                    android:id="@+id/register"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/login_register_selector"
+                    android:text="REGISTER"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textColor="@color/dirtyWhite"
                     android:layout_marginEnd="@dimen/margin_plus"
                     android:layout_marginLeft="@dimen/margin_plus"
                     android:layout_marginRight="@dimen/margin_plus"
                     android:layout_marginStart="@dimen/margin_plus"
-                    android:layout_marginTop="@dimen/margin"
-                    app:cardBackgroundColor="@color/pink"
-                    app:cardCornerRadius="@dimen/radius_cardView_dimen"
-                    app:cardElevation="@dimen/elevation">
-
-                    <android.support.design.widget.CoordinatorLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:id="@+id/register"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:padding="@dimen/small_margin"
-                            android:text="@string/regbutton"
-                            android:textColor="@color/white"
-                            android:textSize="@dimen/text_size" />
-
-                    </android.support.design.widget.CoordinatorLayout>
-
-                </android.support.v7.widget.CardView>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/sign_in_button"

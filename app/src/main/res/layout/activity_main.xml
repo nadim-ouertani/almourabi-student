@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginBottom="0dp"
-        android:background="@color/white"
+        android:background="@drawable/shadow_top_white_8blur"
         app:itemIconTint="@color/bottomnavigationcolor"
         app:itemTextColor="@color/bottomnavigationcolor"
         app:layout_constraintBottom_toBottomOf="parent"
