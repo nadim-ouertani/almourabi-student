@@ -26,7 +26,7 @@ import com.nadim.almourabi.adapters.TeacherListAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import helpers.studentTeacherR;
+import com.nadim.almourabi.helpers.studentTeacherR;
 
 
 /**
