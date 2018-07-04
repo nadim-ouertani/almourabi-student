@@ -53,13 +53,16 @@ public class login extends AppCompatActivity {
                                         finish();
                                     } else {
                                         // If sign in fails, display a message to the user.
+                                        Exception ERR = task.getException();
+                                        assert ERR != null;
+                                        ERR.printStackTrace();
                                     }
 
                                     // ...
                                 }
                             });
                 } else {
-                    System.out.println("ERROR");
+                    System.out.println("ERROR WITH THE VALIDATION");
                 }
             }
         });
